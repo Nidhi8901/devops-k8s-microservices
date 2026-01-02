@@ -10,22 +10,28 @@ This project demonstrates a complete DevOps workflow for a **microservices-based
 - **CI/CD & DevOps:** Dockerized microservices, kind cluster for local Kubernetes, HPA for backend scaling  
 
 ## Architecture
-                  +----------------+
-                  |    Ingress     |
-                  +--------+-------+
-                           |
-         +-----------------+-----------------+
-         |                                   |
- +-------v-------+                   +-------v-------+
- |   Frontend    |                   |    Backend    |
- |  Deployment   |                   |  Deployment   |
- +---------------+                   +---------------+
-         |                                   |
-         +-----------------+-----------------+
-                           |
-                         Database
- 
-
+                         +----------------------+
+                         |        Ingress       |
+                         |  (Nginx Controller)  |
+                         +----------+-----------+
+                                    |
+                                    |
+                    +---------------+---------------+
+                    |                               |
+          +---------v---------+           +---------v---------+
+          |     Frontend      |           |      Backend      |
+          |    Deployment     |           |    Deployment     |
+          |   (Nginx / UI)    |           |   (API Service)   |
+          +---------+---------+           +---------+---------+
+                    |                               |
+                    |                               |
+                    +---------------+---------------+
+                                    |
+                           +--------v--------+
+                           |     Database    |
+                           | (via Secrets &  |
+                           |  Env Variables) |
+                           +-----------------+
 
 
 ### Explanation:
