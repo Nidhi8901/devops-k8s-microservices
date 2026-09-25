@@ -10,7 +10,7 @@
 
   <script>
     function loadData() {
-      fetch("//localhost:5001/products")
+      fetch("/api/products")
         .then(res => res.json())
         .then(data => {
           const ul = document.getElementById("products");

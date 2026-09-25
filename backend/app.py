@@ -11,9 +11,9 @@ def home():
 @app.route("/products")
 def products():
     return jsonify([
-        {"id": 1, "name": "Laptop"},
-        {"id": 2, "name": "Mobile"},
-        {"id": 3, "name": "Headphones"}
+        {"id": 1, "name": "Laptop", "price": 1000},
+        {"id": 2, "name": "Mobile", "price": 600},
+        {"id": 3, "name": "Headphones", "price": 120}
     ])
 
 if __name__ == "__main__":

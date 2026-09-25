@@ -24,12 +24,4 @@ spec:
               memory: "64Mi"
             limits:
               cpu: "200m"
-              memory: "128Mi" 
-          env:
-            - name: BACKEND_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: frontend-config
-                  key: BACKEND_URL
-
-   
+              memory: "128Mi"
